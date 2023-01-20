@@ -1,0 +1,11 @@
+p{
+    margin: 20px 0;
+    font-size: 25px;
+}
+
+.bar{
+    color: #ffc107;
+    height: 100vh;
+    background-color: #f8f9fa;
+    text-align: center;
+}
