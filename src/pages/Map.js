@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Navbar from '../components/Navbar';
 
 
+
 class Map extends Component {
   render() {
     return (
@@ -26,7 +27,7 @@ class Map extends Component {
               </p>
           </div>
 
-          <div className='col-lg-9' style={{height:'100%'}}>
+          <div className='col-lg-9 map'>
           </div>
 
         </div>        
