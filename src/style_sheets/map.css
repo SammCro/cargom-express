@@ -8,7 +8,17 @@ p{
     height: 100vh;
     background-color: #f8f9fa;
     text-align: center;
+    padding: 0px;
+}
+.titles{
+    height: 60vh;
 }
 .map{
+    height: 100vh;
+    background-color: cadetblue;
+    padding: 0px;
+}
+.leaflet-container{
+    width: 100wh;
     height: 100vh;
 }

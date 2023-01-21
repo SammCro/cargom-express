@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import Navbar from '../components/Navbar';
 import MainLogin from '../components/MainLogin';
-
+import Footer from '../components/Footer'
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <Navbar></Navbar>
         <MainLogin></MainLogin>
+        <Footer></Footer>
       </div>
     )
   }

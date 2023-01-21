@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import './MainLogin.css'
+import '../style_sheets/MainLogin.css'
 
 class MainLogin extends Component {
   render() {
     return (
-      <div className='container '>
+      <div className='container 75vh'>
         <h1>
             Cargom Express
         </h1>
         <div className='row mt-5'>
-         <div className='col-md-6'>
+         <div className='col-md-5'>
                 <div className='card'>
                     <div className='card-header'>
                         <h3>Giriş Yap</h3>
@@ -27,7 +27,10 @@ class MainLogin extends Component {
                     </div>
                 </div>   
         </div>
-        <div className='col-md-6'>
+        <div className='col-md-2' style={{textAlign:'center'}}>
+            <h2>veya</h2>
+        </div>
+        <div className='col-md-5'>
                 <div className='card'>
                     <div className='card-header'>
                         <h3>Kayıt Ol</h3>
