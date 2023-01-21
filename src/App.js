@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <>
-        <Navbar></Navbar> {/*I added this comm*/}
+        <Navbar></Navbar> {/*I added this navbar outside of the Routes, because it appears on every page.*/}
         <Routes>
           <Route path='/home' element={<Home/>}></Route>
           <Route path='/' element={<Map/>}></Route>

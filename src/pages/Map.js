@@ -1,14 +1,37 @@
 import '../style_sheets/map.css'
 import React, { Component } from 'react'
 import Footer from '../components/Footer'
-import { MapContainer, TileLayer, useMap,Marker,Popup } from 'react-leaflet'
-
+import { MapContainer, TileLayer,Marker,Popup } from 'react-leaflet'
+import UserConsumer from '../Context'
 
 class Map extends Component {
+  
   render() {
+    const  cokDolu = <i className="fa-solid fa-circle" style={{color:'red'}}></i>;
+    const  ortaDolu = <i className="fa-solid fa-circle" style={{color:'orange'}}></i>;
+    const azDolu = <i className="fa-solid fa-circle" style={{color:'green'}}></i>;
     const main = [39,34]
-    const position = [39.925533, 32.866287]
-    const position2 = [35.925533, 32.866287]
+
+    const iconSelector = (doluluk) =>{
+      switch (doluluk) {
+        case "cok":
+            return cokDolu;
+        case "orta":
+            return ortaDolu;
+        case "az":
+            return azDolu;
+        default:
+            return null;
+      }
+    }
+
+    const errorWriter= (hata) =>{
+      if(hata ==="G")
+        return null;
+      else{
+        return "-- Kodu: "+hata;
+      }  
+    }
     return (
       <div>
         <div className='row'> 
@@ -31,29 +54,38 @@ class Map extends Component {
               <Footer></Footer>
             </div>
           </div>
-
           <div className='col-lg-9 map'>
             <MapContainer  center={main} zoom={6.5} scrollWheelZoom={true}>
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-                <Marker position={position}>
-                  <Popup>
-                      <div className='container'>
-                        <p>samet</p> 
-                        <h2>samet</h2>
-                      </div>
-                  </Popup>
-                </Marker>
-                <Marker position={position2}>
-                  <Popup>
-                      <div className='container'>
-                        <p>samet</p> 
-                        <h2>samet</h2>
-                      </div>
-                  </Popup>
-                </Marker>
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                
+                <UserConsumer>
+                  {
+                    value =>{
+                      const{devices} = value;
+                      return(
+                        devices.map(
+                          device=>{
+                            return(
+                              <Marker position={device.position}>
+                                <Popup>
+                                  <div className='container pop-up'>
+                                      <p>Hata Durumu : {device.hata}  {errorWriter(device.hataKodu)}</p>
+                                      <p>Son Kullanım Tarihi: {device.skt}</p>
+                                      <p>Doluluk Oranı: {iconSelector(device.doluluk)}</p>
+                                  </div>
+                                </Popup>
+                              </Marker>
+                            )
+                          }
+                        )
+                        
+                      )
+                    }
+                  }
+                </UserConsumer>
+                
 
             </MapContainer>
           </div>

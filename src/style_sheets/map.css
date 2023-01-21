@@ -22,3 +22,10 @@ p{
     width: 100wh;
     height: 100vh;
 }
+.leaflet-popup-content{
+    width: 300px;
+}
+.pop-up p{
+    font-size: 15px;
+    font-weight: bold;
+}
