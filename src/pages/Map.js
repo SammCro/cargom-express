@@ -1,17 +1,23 @@
 import '../style_sheets/map.css'
-import React, { Component } from 'react'
 import Footer from '../components/Footer'
+import AddDevice from '../components/AddDevice'
+import React, { Component } from 'react'
 import { MapContainer, TileLayer,Marker,Popup } from 'react-leaflet'
 import UserConsumer from '../Context'
 
 class Map extends Component {
   
   render() {
-    const  cokDolu = <i className="fa-solid fa-circle" style={{color:'red'}}></i>;
-    const  ortaDolu = <i className="fa-solid fa-circle" style={{color:'orange'}}></i>;
-    const azDolu = <i className="fa-solid fa-circle" style={{color:'green'}}></i>;
+    //There are 3 options with capacity, Full,Medium and Low. It is specificied with the color.
+    const  cokDolu = <i className="fa-solid fa-circle fa-2x" style={{color:'red'}}></i>;
+    const  ortaDolu = <i className="fa-solid fa-circle fa-2x" style={{color:'orange'}}></i>;
+    const azDolu = <i className="fa-solid fa-circle fa-2x" style={{color:'green'}}></i>;
+    
+    //It is the center of the map.
     const main = [39,34]
 
+
+    // This function returns an icon that specified in the devices capacity. 
     const iconSelector = (doluluk) =>{
       switch (doluluk) {
         case "cok":
@@ -24,7 +30,7 @@ class Map extends Component {
             return null;
       }
     }
-
+    // This functions return the ERROR code if there is an error on device otherwise it returns null
     const errorWriter= (hata) =>{
       if(hata ==="G")
         return null;
@@ -50,7 +56,8 @@ class Map extends Component {
                 Servisler
               </p>
             </div>
-            <div className='titlesFooter'>
+            <AddDevice></AddDevice>
+            <div className='titlesFooter' style={{marginTop:'55px'}}>
               <Footer></Footer>
             </div>
           </div>
@@ -59,7 +66,6 @@ class Map extends Component {
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
-                
                 <UserConsumer>
                   {
                     value =>{
@@ -85,8 +91,6 @@ class Map extends Component {
                     }
                   }
                 </UserConsumer>
-                
-
             </MapContainer>
           </div>
 

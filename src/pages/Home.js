@@ -7,7 +7,9 @@ class Home extends Component {
     return (
       <div>
         <MainLogin></MainLogin>
-        <Footer></Footer>
+        <div style={{marginTop:'130px'}}>
+          <Footer></Footer>
+        </div>
       </div>
     )
   }
