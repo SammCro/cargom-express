@@ -14,7 +14,10 @@ const markerIcon = new L.icon({
   iconSize : [60,60]
 })
 class Map extends Component {
-  
+  deleteDevice = (id,dispatch,e) =>{
+    e.preventDefault();
+    dispatch({type : "DELETE_DEVICE",payLoad : id})
+  }
   render() {
     //There are 3 options with capacity, Full,Medium and Low. It is specificied with the color.
     const  cokDolu = <i className="fa-solid fa-circle fa-1x" style={{color:'red'}}></i>;
@@ -23,7 +26,6 @@ class Map extends Component {
     
     //It is the center of the map.
     const main = [39,34]
-
 
     // This function returns an icon that specified in the devices capacity. 
     const iconSelector = (doluluk) =>{
@@ -79,7 +81,7 @@ class Map extends Component {
                 <UserConsumer>
                   {
                     value =>{
-                      const{devices} = value;
+                      const{devices,dispatch} = value;
                       return(
                         devices.map(
                           device=>{
@@ -90,7 +92,7 @@ class Map extends Component {
                                       <p>Hata Durumu : {device.hata}  {errorWriter(device.hataKodu)}</p>
                                       <p>Son Kullanım Tarihi: {device.skt}</p>
                                       <p>Doluluk Oranı: {iconSelector(device.doluluk)}</p>
-                                      <button type='submit' className='btn w-100 btn-danger'>Cihazı Kaldır</button>
+                                      <button onClick={this.deleteDevice.bind(this,device.id,dispatch)} className='btn w-100 btn-danger'>Cihazı Kaldır</button>
                                   </div>
                                 </Popup>
                               </Marker>
