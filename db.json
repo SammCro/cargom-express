@@ -1,4 +1,5 @@
 {
+
     "devices": [
         {"id":1,"city":"Ankara","position":[39.9272,32.8644],"hata":"Yok","hataKodu":"G","skt":"24-01-2023","doluluk":"az"},
         {"id":2,"city":"İstanbul","position":[41.0122,28.976],"hata":"Var","hataKodu":"123","skt":"25-01-2023","doluluk":"orta"},
@@ -10,3 +11,5 @@
         {"email" : "onur@bee.com.tr", "password" : "1234"}    
     ]
 }
+
+
