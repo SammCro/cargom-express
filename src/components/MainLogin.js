@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../style_sheets/MainLogin.css'
+import { Link } from 'react-router-dom';
 
 class MainLogin extends Component {
   render() {
@@ -15,14 +16,15 @@ class MainLogin extends Component {
                         <h3>Giriş Yap</h3>
                     </div>
                     <div className='card-body'>
-                        <form>
+                        <form >
                             <label className='mb-2 d-block' htmlFor='mailG'>Email</label>
                             <input className='mb-3 form-control' name='mailG' id='mailG' placeholder='Email'></input>
 
                             <label className='mb-2 d-block' htmlFor='passwordG'>Şifrenizi Girin</label>
                             <input className='mb-3 form-control' name= 'passwordG' id='passwordG' placeholder='Parola'></input>
-
-                            <button type='submit' className='btn w-100 btn-warning'>Giriş Yap</button>
+                            <Link to ='/map'>
+                                <button type='submit' className='btn w-100 btn-warning'>Giriş Yap</button>
+                            </Link>
                         </form>
                     </div>
                 </div>   

@@ -9,8 +9,8 @@ function App() {
     <>
         <Navbar></Navbar> {/*I added this navbar outside of the Routes, because it appears on every page.*/}
         <Routes>
-          <Route path='/home' element={<Home/>}></Route>
-          <Route path='/' element={<Map/>}></Route>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/map' element={<Map/>}></Route>
         </Routes>
     </>
     
