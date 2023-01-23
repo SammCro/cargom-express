@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import UserConsumer from '../Context';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 var uniqid = require("uniqid");
 
 const coordinatesOfCities = {
@@ -11,13 +13,14 @@ const coordinatesOfCities = {
 class AddDevice extends Component {
 
     state = {
-      id : "",
-      city : "",
-      position : "",
-      hata : "yok",
+      // There are the default values if the user does not change the inputs.
+      id : uniqid(),
+      city : "Artvin",
+      position : coordinatesOfCities.Artvin,
+      hata : "Yok",
       hataKodu : "G",
-      skt : "",
-      doluluk : "",
+      skt : "30-02-2023",
+      doluluk : "az",
     }
 
     addDevice = (dispatch,e) =>{
@@ -35,6 +38,7 @@ class AddDevice extends Component {
           doluluk
         }
         dispatch({type:"ADD_DEVICE",payLoad:newDevice})
+        toast.success("Yeni cihaz eklendi: "+city, {theme : 'colored'});
     }
 
     changeCity = (e) => {
