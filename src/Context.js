@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
-var uniqid = require('uniqid'); // I  added this lib to create unique ids for the datas.
+import axios from 'axios'
+
 const UserContext = React.createContext();
+var uniqid = require('uniqid'); // I  added this lib to create unique ids for the datas.
 
 
 const reducer =  (state,action) => {
@@ -22,21 +24,23 @@ const reducer =  (state,action) => {
 
 export class UserProvider extends Component{
     state = {
-        devices: [
-            {"id":uniqid(),"city":"Ankara","position":[39.9272,32.8644],"hata":"Yok","hataKodu":"G","skt":"24-01-2023","doluluk":"az"},
-            {"id":uniqid(),"city":"İstanbul","position":[41.0122,28.976],"hata":"Var","hataKodu":"123","skt":"25-01-2023","doluluk":"orta"},
-            {"id":uniqid(),"city":"İzmir","position":[38.423733,27.142826],"hata":"Var","hataKodu":"421","skt":"26-01-2023","doluluk":"cok"}
-        ],
+        devices: [],
 
-        users: [
-            {"email": "gizem@bee.com.tr", "password" : "1234"},
-            {"email" : "onur@bee.com.tr", "password" : "1234"}    
-        ],
+        users: [],
 
         dispatch : action => {
             this.setState(state => reducer(state,action));
         }
     }
+    componentDidMount =  async () => { 
+        const responseDevices = await axios.get("https://my-json-server.typicode.com/SammCro/cargom_express/devices")
+        const responseUsers = await axios.get("https://my-json-server.typicode.com/SammCro/cargom_express/users")
+        this.setState({
+            devices : responseDevices.data,
+            users : responseUsers.data
+        })
+     }
+
     render(){
         return(
             <UserContext.Provider value={this.state}>

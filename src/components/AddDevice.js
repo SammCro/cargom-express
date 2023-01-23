@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import UserConsumer from '../Context';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+
 var uniqid = require("uniqid");
 
 const coordinatesOfCities = {
@@ -37,6 +39,7 @@ class AddDevice extends Component {
           skt,
           doluluk
         }
+        axios.post("https://my-json-server.typicode.com/SammCro/cargom_express/devices",{"samet":"2"})
         dispatch({type:"ADD_DEVICE",payLoad:newDevice})
         toast.success("Yeni cihaz eklendi: "+city, {theme : 'colored'});
     }
