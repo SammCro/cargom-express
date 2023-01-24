@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/cargom_express/static/css/main.0079c5f7.css",
-    "main.js": "/cargom_express/static/js/main.5eb59f04.js",
+    "main.js": "/cargom_express/static/js/main.2b9bdec9.js",
     "index.html": "/cargom_express/index.html",
     "main.0079c5f7.css.map": "/cargom_express/static/css/main.0079c5f7.css.map",
-    "main.5eb59f04.js.map": "/cargom_express/static/js/main.5eb59f04.js.map"
+    "main.2b9bdec9.js.map": "/cargom_express/static/js/main.2b9bdec9.js.map"
   },
   "entrypoints": [
     "static/css/main.0079c5f7.css",
-    "static/js/main.5eb59f04.js"
+    "static/js/main.2b9bdec9.js"
   ]
 }
