@@ -3,7 +3,9 @@
 Kullanıcı Ana Sayfa'dan giriş yaptıktan sonra, Türkiye'deki ve dünyadaki xihazlarının durumlarını öğrenmesi için haritanın bulunduğu sayfaya yönlendirilir. Burada tüm cihazlar online bir JSON Server'dan çekilir ve kullanıcıya harita üzerinde gösterilir. </p>
 <h2>Desktop - Mobile Design</h2>
 <p> </p> Uygulama hem Mobil hem de Desktop'da responsive bir şekilde çalışabilmekte.
-<img src="https://github.com/SammCro/cargom_express/blob/master/src/imgs_of_app/web1.png" style = "width:500px"></img>
+<img src="https://github.com/SammCro/cargom_express/blob/master/src/imgs_of_app/web1.png" style = "width:50%,padding: 10px,float:left"></img>
+<img src="https://github.com/SammCro/cargom_express/blob/master/src/imgs_of_app/web2.png" style = "width:50%,padding: 10px,float:left"></img>
+
 
 <h2> Styling </h2>
 
