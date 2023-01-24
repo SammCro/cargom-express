@@ -1,4 +1,4 @@
-#Basit Kontrol Merkezi Projesi
+<h1>Cargom Express: Kontrol Merkezi Projesi</h1>
 
 Proje boyunca inline CSS kullanılır, çünkü çoğu stillendirme hız ve kalite için Bootstrap kütüphanesinden kullanılarak hazırlanır. O yüzden her bir component için ek CSS dosyalarına sadece Responsive tasarım yapılırken ihtiyaç duyulur. Ve genellikle belli bir class değil de element bazında stillendirmeler bulunduğu için hızlı bir şekilde inline CSS kullanılır.
 
