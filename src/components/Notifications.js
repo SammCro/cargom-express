@@ -4,6 +4,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import UserConsumer from '../Context';
 
 
+
+//It is the Notification component that works and give notifications with every refresh of the page.
+//I used tostify library to give notifications because it is easy to use and it is easy if we try to style the nofitications.
 class Notifications extends Component{
   render(){
     return (

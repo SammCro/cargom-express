@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import logo from '../imgs/beevision.jpg'
 import {Link} from 'react-router-dom'
 
+
+// It is the Navbar component that mounted in every page.
 class Navbar extends Component {
   render() {
     return (

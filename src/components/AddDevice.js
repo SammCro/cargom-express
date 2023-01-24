@@ -4,6 +4,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
+
+// I used this library to create unique id's to devices.
 var uniqid = require("uniqid");
 
 const coordinatesOfCities = {
@@ -11,6 +13,7 @@ const coordinatesOfCities = {
   "Antalya" : [36.892,30.6944],
   "Tokat" : [40.3235,36.5522]
 }
+
 
 class AddDevice extends Component {
 
@@ -25,6 +28,7 @@ class AddDevice extends Component {
       doluluk : "az",
     }
 
+    // If the submit button triggered this function works and takes inputs then add them using dispatch function. It also adds to the database.
     addDevice = (dispatch,e) =>{
         e.preventDefault();
         const{id,city,hata,hataKodu,skt,doluluk} = this.state;
@@ -39,11 +43,13 @@ class AddDevice extends Component {
           skt,
           doluluk
         }
-        axios.post("https://my-json-server.typicode.com/SammCro/cargom_express/devices",{"samet":"2"})
+        axios.post("https://my-json-server.typicode.com/SammCro/cargom_express/devices",newDevice)
         dispatch({type:"ADD_DEVICE",payLoad:newDevice})
         toast.success("Yeni cihaz eklendi: "+city, {theme : 'colored'});
     }
 
+
+    //These are the functions if inputs change, because inputs are controlled components
     changeCity = (e) => {
       this.setState(
         {
@@ -78,30 +84,31 @@ class AddDevice extends Component {
             const{dispatch} = value;
             return(
               <div className='container ml-1'>
-        <div className='card'>
-            <div className='card-header'><h5 className='d-block text-left'>Cihaz Ekle</h5></div>
-            <div className='card-body'>
-                <form onSubmit={this.addDevice.bind(this,dispatch)}>
-                <label className="d-block text-left form-label" htmlFor='city'>Şehir</label>
-                <select name='city' id='city' value={city} onChange={this.changeCity} class="form-select d-block" aria-label="Default select example">
-                    <option selected value="Artvin">Artvin</option>
-                    <option value="Antalya">Antalya</option>
-                    <option value="Tokat">Tokat</option>
-                </select>
-                <label className='mt-4 d-block text-left form-label' htmlFor='date'>Son Kullanma Tarihi</label>
-                <input type='date' value={skt} onChange={this.changeSkt} className="d-block text-left" name='date' id='date'></input>
+                <div className='card'>
+                  <div className='card-header'><h5 className='d-block text-left'>Cihaz Ekle</h5>
+                  </div>
+                  <div className='card-body'>
+                    <form onSubmit={this.addDevice.bind(this,dispatch)}>
+                      <label className="d-block text-left form-label" htmlFor='city'>Şehir</label>
+                        <select name='city' id='city' value={city} onChange={this.changeCity} class="form-select d-block" aria-label="Default select example">
+                          <option selected value="Artvin">Artvin</option>
+                          <option value="Antalya">Antalya</option>
+                          <option value="Tokat">Tokat</option>
+                        </select>
+                      <label className='mt-4 d-block text-left form-label' htmlFor='date'>Son Kullanma Tarihi</label>
+                      <input type='date' value={skt} onChange={this.changeSkt} className="d-block text-left" name='date' id='date'></input>
                 
-                <label className='mt-4 d-block text-left form-label' htmlFor='capacity'>Doluluk Oranı</label>
-                <select name='capacity' id='capacity' value={doluluk} onChange={this.changeDoluluk} class="form-select d-block" aria-label="Default select example">
-                    <option selected value="az">Az</option>
-                    <option value="orta">Orta</option>
-                    <option value="cok">Çok</option>
-                </select>
-                <button type='submit'  className='btn btn-warning w-100 mt-4'>Cihaz Ekle</button>
-                </form>
-            </div>
-        </div>
-      </div>
+                      <label className='mt-4 d-block text-left form-label' htmlFor='capacity'>Doluluk Oranı</label>
+                      <select name='capacity' id='capacity' value={doluluk} onChange={this.changeDoluluk} class="form-select d-block" aria-label="Default select example">
+                        <option selected value="az">Az</option>
+                        <option value="orta">Orta</option>
+                        <option value="cok">Çok</option>
+                      </select>
+                      <button type='submit'  className='btn btn-warning w-100 mt-4'>Cihaz Ekle</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             )
           }
         }

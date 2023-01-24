@@ -14,6 +14,8 @@ const markerIcon = new L.icon({
   iconSize : [60,60]
 })
 class Map extends Component {
+
+  // This function works if the user want to delete a device and it use dispatch function of the Context. 
   deleteDevice = (id,dispatch,e) =>{
     e.preventDefault();
     dispatch({type : "DELETE_DEVICE",payLoad : id})
