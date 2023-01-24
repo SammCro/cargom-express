@@ -10,7 +10,7 @@ class Navbar extends Component {
         <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{height :80}}>
             <a className="navbar-brand" style={{marginRight: 50}}>
                 <span className='mr-2 font-weight-bold'>Cargom Express</span>
-                <Link to= '/'>
+                <Link to= '/cargom_express/'>
                   <img src={logo}></img>
                 </Link>
             </a>
