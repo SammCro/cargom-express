@@ -36,4 +36,4 @@ Uygulama 2 sayfadan oluşmaktadır:
 
 <h2>JSON Database and Axios Library</h2>
 <p>Uygulama server tabanlı çalışmakta olup, JSON server üzerinden işlemler yapılmaktadır. Ama server ücretsiz olduğundan requetler çok geç iletilmektedir, dolayısıyla uygulama üzerinde gözükememektedir, bunun diğer sebebi ise Github'daki JSON file üzerinden çektiği için server Github'daki JSON dosyasına bağlı işlem yapmaktadır. GET,POST,DELETE işlemleri için Axios kütüphanesi kullanılmaktadır. Çünkü bu kütüphane kullanım ve kod temizliği açısından çok iyi performans göstermektedir.</p>
-<p>Uygulama için kullanılan JSON Servera <a target="-blank" href="https://my-json-server.typicode.com/SammCro/cargom_express/devices">buradan </a>ulaşılabilmektedir.</p>
+<p>Uygulama için kullanılan JSON Servera <a target="_blank" href="https://my-json-server.typicode.com/SammCro/cargom_express/devices">buradan </a>ulaşılabilmektedir.</p>
