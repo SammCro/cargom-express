@@ -22,7 +22,7 @@ class MainLogin extends Component {
 
                             <label className='mb-2 d-block' htmlFor='passwordG'>Şifrenizi Girin</label>
                             <input className='mb-3 form-control' name= 'passwordG' id='passwordG' placeholder='Parola'></input>
-                            <Link to ='/map'>
+                            <Link to ='/cargom_express/map'>
                                 <button type='submit' className='btn w-100 btn-warning'>Giriş Yap</button>
                             </Link>
                         </form>
