@@ -6,6 +6,7 @@ import { MapContainer, TileLayer,Marker,Popup } from 'react-leaflet'
 import L from 'leaflet'
 import UserConsumer from '../Context'
 import Notifications from '../components/Notifications'
+import axios from 'axios'
 
 
 //Default marker is changed to the icon of the company.
@@ -16,9 +17,10 @@ const markerIcon = new L.icon({
 class Map extends Component {
 
   // This function works if the user want to delete a device and it use dispatch function of the Context. 
-  deleteDevice = (id,dispatch,e) =>{
+  deleteDevice = (idDevice,dispatch,e) =>{
     e.preventDefault();
-    dispatch({type : "DELETE_DEVICE",payLoad : id})
+    dispatch({type : "DELETE_DEVICE",payLoad : idDevice})
+    axios("https://my-json-server.typicode.com/SammCro/cargom_express/devices",{data:{id:idDevice}, headers:{Authorization: "token"}})
   }
   render() {
     //There are 3 options with capacity, Full,Medium and Low. It is specificied with the color.
