@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cargom_express/static/css/main.0079c5f7.css",
+    "main.js": "/cargom_express/static/js/main.926362da.js",
+    "index.html": "/cargom_express/index.html",
+    "main.0079c5f7.css.map": "/cargom_express/static/css/main.0079c5f7.css.map",
+    "main.926362da.js.map": "/cargom_express/static/js/main.926362da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0079c5f7.css",
+    "static/js/main.926362da.js"
+  ]
+}
