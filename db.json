@@ -3,7 +3,7 @@
     "devices": [
         {"id":"1","city":"Ankara","position":[39.9272,32.8644],"hata":"Yok","hataKodu":"G","skt":"24-01-2023","doluluk":"az"},
         {"id":"2","city":"İstanbul","position":[41.0122,28.976],"hata":"Var","hataKodu":"123","skt":"25-01-2023","doluluk":"orta"},
-        {"id":"3","city":"İzmir","position":[38.423733,27.142826],"hata":"Var","hataKodu":"421","skt":"26-01-2023","doluluk":"cok"}
+        {"id":"3","city":"İzmir","position":[38.423733,27.142826],"hata":"Var","hataKodu":"421","skt":"26-01-2023","doluluk":"cok"},{"id":"3","city":"İzmir","position":[38.423733,27.142826],"hata":"Var","hataKodu":"421","skt":"26-01-2023","doluluk":"cok"}
     ],
 
     "users": [
@@ -11,5 +11,3 @@
         {"email": "onur@bee.com.tr", "password" : "1234"}    
     ]
 }
-
-
