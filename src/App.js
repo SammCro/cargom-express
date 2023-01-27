@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import {Routes,Route} from 'react-router-dom'
 import Navbar from './components/Navbar';
 
-
+//It is the function that App works
 function App() {
   return (
     <>
